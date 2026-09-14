@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Равоншинос</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Равоншинос</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+      </nav>
+      <div class="header-buttons">
+        <a href="register.html" class="btn btn-primary">Регистрация</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="auth-form">
+        <h1>Вход в аккаунт</h1>
+        <p class="auth-subtitle">Введите email — мы отправим ссылку для входа</p>
+
+        <form id="loginForm">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+
+          <button type="submit" class="btn btn-primary btn-full">Войти</button>
+        </form>
+
+        <p class="auth-footer">
+          Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+        </p>
+
+        <div id="message" class="message"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Равоншинос. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
