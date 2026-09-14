@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Личный кабинет — Равоншинос</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
         <a href="catalog.html">Каталог</a>
       </nav>
       <div class="header-buttons">
+        <span id="userEmail" class="user-email"></span>
         <button onclick="logout()" class="btn btn-secondary">Выйти</button>
       </div>
     </div>
@@ -25,13 +26,23 @@
   <section class="section">
     <div class="container">
       <h1 id="welcome">Личный кабинет</h1>
-      <p class="auth-subtitle">Здесь будут ваши записи к психологам</p>
+      <p class="auth-subtitle">Здесь ваши записи к психологам</p>
 
-      <div class="card" style="margin-top: 30px;">
-        <h3>Мои записи</h3>
-        <p style="color: var(--text-muted); margin-top: 10px;">
-          Пока нет записей. <a href="catalog.html" style="color: var(--sage);">Найти психолога →</a>
-        </p>
+      <div class="dashboard-tabs">
+        <button class="tab-btn active" data-tab="upcoming">Предстоящие</button>
+        <button class="tab-btn" data-tab="past">Прошедшие</button>
+        <button class="tab-btn" data-tab="cancelled">Отменённые</button>
+      </div>
+
+      <div id="bookingsList" class="bookings-list">
+        <!-- Записи рендерятся через JS -->
+      </div>
+
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">📅</div>
+        <h3>Пока нет записей</h3>
+        <p>Найдите психолога и запишитесь на первую сессию</p>
+        <a href="catalog.html" class="btn btn-primary">Найти психолога</a>
       </div>
     </div>
   </section>
@@ -43,19 +54,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Проверка входа
-    const user = JSON.parse(localStorage.getItem('user') || 'null');
-    if (!user) {
-      window.location.href = 'login.html';
-    } else {
-      document.getElementById('welcome').textContent = 'Привет, ' + user.name + '!';
-    }
-
-    function logout() {
-      localStorage.removeItem('user');
-      window.location.href = 'index.html';
-    }
-  </script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
