@@ -1,2 +1,2 @@
-window.SUPABASE_URL = 'ВСТАВЬТЕ_СЮДА_PROJECT_URL';
-window.SUPABASE_ANON_KEY = 'ВСТАВЬТЕ_СЮДА_ANON_KEY';
+window.SUPABASE_URL = 'https://otqhrpbxhxkrhrnjqbba.supabase.co';
+window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ваш_длинный_ключ';
